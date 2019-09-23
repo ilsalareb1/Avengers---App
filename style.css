@@ -1,3 +1,38 @@
-body{
-    background-color: red;
+html{
+    font-size: 62.5%; /*this makes all relative units equal 10px, REM-relative unit, 1 rem=10px*/
 }
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Roboto Condensed', sans-serif;      
+}
+
+.banner{
+    text-align:center;
+    margin: 2 rem auto;
+    background-color: #c96567;
+    color:white;
+    height:60 vh;
+    /*viewport height*/
+    font-size: 4 rem;
+    text-transform:uppercase;
+    letter-spacing:1 rem;
+}
+
+.user-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+#hero-form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+
