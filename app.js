@@ -42,12 +42,13 @@ const form = document.querySelector('#hero-form');//could also getElementByID
 const userAlias = document.querySelector('#alias');
 const userPowers = document.querySelector('#powers');
 const userFullname = document.querySelector('#full-name');
-const userFirstAppearance = document.querySelector('#first-appearnance');
+const userFirstAppearance = document.querySelector('#first-appearance');
 const userImage = document.querySelector('#image');
-const display = document.querySelector('#display');
+const display = document.querySelector('.display');
 
 function eventListeners(){
-    form.addEventListener('submit', displayAvengerMember);    
+    form.addEventListener('submit', displayAvengerMember); 
+    display.addEventListener('click', removeAvenger);   
 }
 eventListeners();
 
@@ -57,11 +58,16 @@ function displayAvengerMember (e){
     let newHtml = html.replace('%alias%', userAlias.value);
     newHtml = newHtml.replace('%powers%', userPowers.value);
     newHtml = newHtml.replace('%name%', userFullname.value);
-    newHtml = newHtml.replace('%fullAppearance%', userFirstAppearance.value);
+    newHtml = newHtml.replace('%firstAppearance%', userFirstAppearance.value);
     newHtml = newHtml.replace('%url%', userImage.value);
     display.insertAdjacentHTML('beforeend', newHtml);
+    e.preventDefault();
 
-    console.log('eh bdfrg wrf');
-    console.log(userAlias.value);
 }
 
+function removeAvenger(){
+    if(e.target.parentElement.classList.contain('.remove-avenger')){
+        /* e.target.parentElement.parentElement.remove(); */
+        console.log(e.target.parentElement);
+    }
+}
