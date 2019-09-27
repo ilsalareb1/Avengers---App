@@ -65,9 +65,12 @@ function displayAvengerMember (e){
 
 }
 
-function removeAvenger(){
-    if(e.target.parentElement.classList.contain('.remove-avenger')){
-        /* e.target.parentElement.parentElement.remove(); */
-        console.log(e.target.parentElement);
+function removeAvenger(e){
+    if(e.target.parentElement.classList.contains('remove-avenger')){
+        e.target.parentElement.parentElement.remove();   
     }
+}
+
+function clearEntries(){
+    if 
 }
