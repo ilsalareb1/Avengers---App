@@ -53,6 +53,14 @@ function eventListeners(){
 eventListeners();
 
 function displayAvengerMember (e){
+
+    if (userAlias.value === ' ' ){
+
+    } return alert('Please imput all values'); {
+
+    } else {
+
+    
     let html= '<div class="display-avenger"><div class="display-alias">%alias%</div><div class="display-powers">%powers%</div><div class="display-name">%name%</div><div class="first-appearance">%firstAppearance%</div><div class="display-image"><img src="%url%"></div><div class="remove-avenger"><p class="remove-avenger">Remove Avenger &#10006; </p></div></div>';
 
     let newHtml = html.replace('%alias%', userAlias.value);
@@ -62,8 +70,10 @@ function displayAvengerMember (e){
     newHtml = newHtml.replace('%url%', userImage.value);
     display.insertAdjacentHTML('beforeend', newHtml);
     e.preventDefault();
+    }
 
 }
+
 
 function removeAvenger(e){
     if(e.target.parentElement.classList.contains('remove-avenger')){
@@ -71,6 +81,3 @@ function removeAvenger(e){
     }
 }
 
-function clearEntries(){
-    if 
-}
