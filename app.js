@@ -53,23 +53,19 @@ function eventListeners(){
 eventListeners();
 
 function displayAvengerMember (e){
-
-    if (userAlias.value === ' ' ){
-
-    } return alert('Please imput all values'); {
-
+    if (userAlias.value === ' ') {
+        alert('Please insert all values!');
     } else {
+        //added required to html instead of if function//
+        let html= '<div class="display-avenger"><div class="display-alias">%alias%</div><div class="display-powers">%powers%</div><div class="display-name">%name%</div><div class="first-appearance">%firstAppearance%</div><div class="display-image"><img src="%url%"></div><div class="remove-avenger"><p class="remove-avenger">Remove Avenger &#10006; </p></div></div>';
 
-    
-    let html= '<div class="display-avenger"><div class="display-alias">%alias%</div><div class="display-powers">%powers%</div><div class="display-name">%name%</div><div class="first-appearance">%firstAppearance%</div><div class="display-image"><img src="%url%"></div><div class="remove-avenger"><p class="remove-avenger">Remove Avenger &#10006; </p></div></div>';
-
-    let newHtml = html.replace('%alias%', userAlias.value);
-    newHtml = newHtml.replace('%powers%', userPowers.value);
-    newHtml = newHtml.replace('%name%', userFullname.value);
-    newHtml = newHtml.replace('%firstAppearance%', userFirstAppearance.value);
-    newHtml = newHtml.replace('%url%', userImage.value);
-    display.insertAdjacentHTML('beforeend', newHtml);
-    e.preventDefault();
+        let newHtml = html.replace('%alias%', userAlias.value);
+        newHtml = newHtml.replace('%powers%', userPowers.value);
+        newHtml = newHtml.replace('%name%', userFullname.value);
+        newHtml = newHtml.replace('%firstAppearance%', userFirstAppearance.value);
+        newHtml = newHtml.replace('%url%', userImage.value);
+        display.insertAdjacentHTML('beforeend', newHtml);
+        e.preventDefault();
     }
 
 }
@@ -80,4 +76,7 @@ function removeAvenger(e){
         e.target.parentElement.parentElement.remove();   
     }
 }
+
+document.getElementsByClassName(".text-box").reset(); 
+
 
